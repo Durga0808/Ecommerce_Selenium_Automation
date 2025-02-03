@@ -34,6 +34,9 @@ public class HomePage extends BasePage{
 		return signInBtn;
 	}
 	
+	public WebElement getloggedInMsg() {
+		return loggedInMsg;
+	}
     public CreateAccountPage clickCreateAnAccountButton() {
     	createAccountBtn.click();
         return new CreateAccountPage();
@@ -59,4 +62,9 @@ public class HomePage extends BasePage{
     public void gotoHomePage() {
 		driver.get("https://magento.softwaretestingboard.com/");
     }
+
+    public NavBar getNavBar() {
+        return new NavBar();
+    }
+    
 }

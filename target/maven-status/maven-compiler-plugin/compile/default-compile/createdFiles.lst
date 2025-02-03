@@ -1,0 +1,9 @@
+ECommerce_Selenium_Automation/magento/Data/Address.class
+ECommerce_Selenium_Automation/magento/Pages/BasePage.class
+ECommerce_Selenium_Automation/magento/Pages/LoginPage.class
+ECommerce_Selenium_Automation/magento/Pages/CreateAccountPage.class
+ECommerce_Selenium_Automation/magento/Data/User.class
+ECommerce_Selenium_Automation/magento/Pages/AccountPage.class
+ECommerce_Selenium_Automation/magento/Pages/HomePage.class
+ECommerce_Selenium_Automation/magento/Pages/AddressPage.class
+ECommerce_Selenium_Automation/magento/DriverSetUp/LocalDriver.class

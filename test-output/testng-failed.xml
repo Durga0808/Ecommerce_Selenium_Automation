@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ECommerce_Selenium_Automation.magento.AddressTest">
+      <class name="ECommerce_Selenium_Automation.magento.CartTest">
         <methods>
           <include name="closeBrowser"/>
-          <include name="addNewAddressTest"/>
-          <include name="accessAccount"/>
           <include name="setupDriver"/>
           <include name="getTestInformation"/>
+          <include name="verifyAddProductsToCart"/>
         </methods>
-      </class> <!-- ECommerce_Selenium_Automation.magento.AddressTest -->
+      </class> <!-- ECommerce_Selenium_Automation.magento.CartTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

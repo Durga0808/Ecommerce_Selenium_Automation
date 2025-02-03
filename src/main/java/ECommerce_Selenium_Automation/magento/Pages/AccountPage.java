@@ -15,6 +15,12 @@ public class AccountPage extends BasePage{
     @FindBy(css = ".nav li:nth-of-type(6) a")
     private WebElement addressBookBtn;
     
+    @FindBy(xpath = "//div[@class='box-content']//p")
+    private WebElement contactInfo;
+    
+    public String getContactInfo() {
+    	return this.contactInfo.getText();
+    }
     public AddressPage clickAddressBookBtn() {
         addressBookBtn.click();
         return new AddressPage();

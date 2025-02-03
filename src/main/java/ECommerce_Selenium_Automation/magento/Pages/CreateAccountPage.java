@@ -14,7 +14,7 @@ public class CreateAccountPage extends BasePage {
 	@FindBy(id = "firstname")
 	private WebElement firstNameField;
 
-	@FindBy(id = "lasttname")
+	@FindBy(id = "lastname")
 	private WebElement lastNameField;
 
 	@FindBy(id = "email_address")
