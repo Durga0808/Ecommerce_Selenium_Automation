@@ -14,12 +14,14 @@ public class LocalDriver {
 	}
 
 	public static void setupDriver() {
-        WebDriverManager.chromedriver().setup();
-		driver.set(new ChromeDriver()); // Each thread gets its own driver instance
+		if (driver.get() == null) {
+			WebDriverManager.chromedriver().setup();
+			driver.set(new ChromeDriver()); // Each thread gets its own driver instance
+		}
 	}
 
 	public static WebDriver getDriver() {
-		if(driver.get()==null) {
+		if (driver.get() == null) {
 			setupDriver();
 		}
 		return driver.get(); // Retrieves the driver for the current thread

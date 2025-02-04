@@ -6,7 +6,9 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -30,9 +32,12 @@ public class BaseTest {
 	}
 
 	@AfterMethod
-	public void getTestInformation() {
+	public void getTestInformation(ITestResult result) {
 		browserInformation = getBrowserInformation();
-		screenshot = getScreenshot();
+		if (!result.isSuccess()) {
+			screenshot = getScreenshot();
+			System.out.println("Screenshot captured for failed test: " + result.getName());
+		}
 	}
 
 	@AfterClass
@@ -48,6 +53,10 @@ public class BaseTest {
 	}
 
 	private static byte[] getScreenshot() {
-		return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-	}
+		try {
+			return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+		} catch (WebDriverException e) {
+			System.err.println("Failed to capture screenshot: " + e.getMessage());
+			return null;
+		}	}
 }
